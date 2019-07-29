@@ -3,42 +3,65 @@
         {
             "name": "Everything",
             "cmd": "D:/_home_/tom/program/green_program/应用软件/文件管理/Everything/Everything.exe  -search \"%s\"",
-            "tag": ["a-Everything"]
+            "tag": [
+                "a-本地搜索"
+            ]
         },
         {
-            "name": "google",
-            "cmd": "https://www.google.com/search?q=%s",
-            "tag": ["web"]
-        },
-        {
-            "name": "baidu",
-            "cmd": "https://www.baidu.com/s?wd=%s",
-            "tag": ["web"]
+            "name": "百度翻译",
+            "cmd": "https://fanyi.baidu.com/#auto/zh/%s",
+            "tag": [
+                "b-翻译"
+            ]
         },
         {
             "name": "AVMOO日本有码",
             "cmd": "https://avmoo.asia/tw/search/%s",
-            "tag": ["b-av亚洲有码"]
+            "tag": [
+                "c-av亚洲有码"
+            ]
         },
         {
             "name": "AVSOX日本无码",
             "cmd": "https://avsox.asia/tw/search/%s",
-            "tag": ["c-av亚洲无码"]
+            "tag": [
+                "d-av亚洲无码"
+            ]
         },
         {
             "name": "AVMEMO欧美无码",
             "cmd": "https://avmemo.asia/tw/search/%s",
-            "tag": ["d-av欧美"]
+            "tag": [
+                "e-av欧美"
+            ]
         },
         {
             "name": "btso",
-            "cmd": "https://btsow.pw/search/%s",
-            "tag": ["e-bt"]
+            "cmd": "https://btspread.com/search/%s",
+            "tag": [
+                "e-bt"
+            ]
+        },
+        {
+            "name": "google",
+            "cmd": "https://www.google.com/search?q=%s",
+            "tag": [
+                "web"
+            ]
+        },
+        {
+            "name": "baidu",
+            "cmd": "https://www.baidu.com/s?wd=%s",
+            "tag": [
+                "web"
+            ]
         },
         {
             "name": "github",
             "cmd": "https://github.com/search?q=%s&ref=opensearch",
-            "tag": ["github"]
+            "tag": [
+                "github"
+            ]
         }
     ],
     "localSearcher": {

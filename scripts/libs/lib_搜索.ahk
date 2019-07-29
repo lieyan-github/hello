@@ -51,7 +51,8 @@ cleanSearchKey(_searchKey, _RegEx:="[,\n\r]", _replace:=""){
     }
     ; 执行单次搜索任务
     简单搜索(搜索关键字, _searcher)
-    CsvFile.append(Config.upath("searchHistoryFile"), _searcherTag, 搜索关键字, Sys.now())
+    ; 写入搜索历史文件
+    ; CsvFile.append(Config.upath("searchHistoryFile"), _searcherTag, 搜索关键字, Sys.now())
     ;--- end
 }
 

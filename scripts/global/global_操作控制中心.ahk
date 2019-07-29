@@ -82,10 +82,16 @@ web财经(){
 ; ----------------------------------------------------------
 ; [ 常用功能设置]
 ; ----------------------------------------------------------
-$Capslock::show_msg("键屏蔽, 用ctrl + Capslock代替.")        ; 屏蔽Capslock键
-^Capslock::Capslock
+$Capslock::show_msg("键屏蔽, 用alt + Capslock代替.")   ; 屏蔽Capslock键
+^Capslock::show_msg(A_ThisHotkey)
+Capslock & `::show_msg(A_ThisHotkey)
+Capslock & 1::show_msg(A_ThisHotkey)
+Capslock & 2::show_msg(A_ThisHotkey)
+Capslock & 3::show_msg(A_ThisHotkey)
+Capslock & 4::show_msg(A_ThisHotkey)
+Capslock & 5::show_msg(A_ThisHotkey)
 
-#e::                                                        ; 打开home目录
+;#e::                                                        ; 打开home目录
 #home::打开窗口("D:\_home_\tom")
 
 ^#home::打开窗口(A_ScriptDir)                                ; 打开脚本主目录
@@ -190,7 +196,7 @@ Launch_Media::提示热键无操作()          ;fn+f3
 Media_Prev::提示热键无操作()            ;fn+f4
 Media_Play_Pause::提示热键无操作()      ;fn+f5
 Media_Next::提示热键无操作()            ;fn+f6
-Volume_Mute::提示热键无操作()           ;fn+f7
+;Volume_Mute::提示热键无操作()           ;fn+f7
 ;Volume_Down::提示热键无操作()           ;fn+f8
 ;Volume_Up::提示热键无操作()             ;fn+f9
 ; -------------------------------
@@ -217,6 +223,7 @@ Launch_App2::提示热键无操作()
 ; ----------------------------------------------------------
 ; [lib_搜索]快捷搜索
 ; ----------------------------------------------------------
+#Capslock::
 #q::search_menu()                   ;搜索菜单
 ^#q::运行程序("D:\Program Files\Listary\Listary.exe")
 
@@ -366,22 +373,24 @@ return
     return
 
 ; 鼠标快速向左调整窗口()
+^MButton::
 $Wheelleft::
     if(inWinList(允许调整窗口白名单())){
         鼠标快速向左调整窗口()                                ; 资源管理器窗口
     }
     else{
-        提示热键无操作()
+        添加窗口到白名单()
     }
 return
 
 ; 鼠标快速向右调整窗口()
+!MButton::
 $Wheelright::
     if(inWinList(允许调整窗口白名单())){
         鼠标快速向右调整窗口()                                ; 资源管理器窗口
     }
     else{
-        提示热键无操作()
+        添加窗口到白名单()
     }
 return
 
@@ -391,7 +400,7 @@ $XButton1::
         鼠标快速向左调整窗口()                                ; 资源管理器窗口
     }
     else{
-        提示热键无操作()
+        添加窗口到白名单()
     }
 return
 
@@ -401,7 +410,7 @@ $XButton2::
         鼠标快速向右调整窗口()                                ; 资源管理器窗口
     }
     else{
-        提示热键无操作()
+        添加窗口到白名单()
     }
 return
 
@@ -414,7 +423,7 @@ $MButton::
         鼠标单键切换窗口y轴大小()                             ; 资源管理器窗口
     }
     else{
-        提示热键无操作()
+        添加窗口到白名单()
     }
 return
 
@@ -424,17 +433,17 @@ $+MButton::
         鼠标单键切换窗口x轴大小()                             ; 资源管理器窗口
     }
     else{
-        提示热键无操作()
+        添加窗口到白名单()
     }
 return
 
 ; 按ctrl+鼠标中键, 窗口屏幕居中, 1440*720
-$^MButton::
+$^!MButton::
     if(inWinList(允许调整窗口白名单())){
-        鼠标单键切换窗口y轴大小()                             ; 资源管理器窗口
+        快捷操作_移动当前窗口(5)                             ; 资源管理器窗口
     }
     else{
-        提示热键无操作()
+        添加窗口到白名单()
     }
 return
 
